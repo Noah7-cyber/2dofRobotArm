@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Trajectory</title>
+    <style>
+       
+        #info-keeper{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <h1>FORWARD KINEMATICS OF A 2DOF MANIPULATOR</h1>
+    <div id="info-keeper">
+        <label for="l1">input L1</label>
+    <input type="number" name="l1" id="l1">
+    </div>
+    <div id="info-keeper">
+        <label for="l2">input L2</label>
+    <input type="number" name="l2" id="l2">
+    </div>
+    <div id="info-keeper">
+        <label for="ϴ1">input ϴ1</label>
+    <input type="number" name="ϴ1" id="ϴ1">
+    </div>
+    <div id="info-keeper">
+        <label for="ϴ2">input ϴ2</label>
+    <input type="number" name="ϴ2" id="ϴ2">
+    </div>
+    <button id="visualize">Visualize</button>
+    <canvas id="robotCanvas"></canvas>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

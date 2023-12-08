@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Canvas Animation</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const context = canvas.getContext("2d");
+
+      // Line properties
+      const startX = 50;
+      const startY = 50;
+      const endX = 350;
+      const endY = 350;
+      const lineColor = "blue";
+      const lineWidth = 2;
+
+      // Animation properties
+      let progress = 0;
+      const animationDuration = 2000; // 2 seconds
+
+      function animate() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Calculate the current position of the line
+        const currentX = startX + (endX - startX) * progress;
+        const currentY = startY + (endY - startY) * progress;
+
+        // Draw the line
+        context.strokeStyle = lineColor;
+        context.lineWidth = lineWidth;
+        context.beginPath();
+        context.moveTo(startX, startY);
+        context.lineTo(currentX, currentY);
+        context.stroke();
+
+        // Update the animation progress
+        progress += 1 / (animationDuration / 1000) / 60;
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      }
+
+      // Start the animation
+      animate();
+    </script>
+  </body>
+</html>
